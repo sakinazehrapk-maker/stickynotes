@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes Wall</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Wall of sticky notes!</h1>
+        <p>Leave a little thought behind!</p>
+    </header>
+    <main>
+        <section class="wall" id="wall">
+        </section>
+        <section class="add-note">
+            <h2>Leave a note</h2>
+            <textarea
+                id="noteText"
+                placeholder="Write something kind..."
+            ></textarea>
+            <div class="note-options">
+                <label>
+                    Note color:
+                    <input
+                        type="color"
+                        id="noteColor"
+                        value="#fff3a6"
+                    >
+                </label>
+                <button id="addNote">
+                Stick it!
+                </button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
