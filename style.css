@@ -111,3 +111,27 @@ button:hover {
 button:active {
     transform: translateY(0);
 }
+.note {
+    position: absolute;
+    width: 170px;
+    min-height: 170px;
+    padding: 25px 18px 18px;
+    border-radius: 3px;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #5c4652;
+    box-shadow:
+        4px 6px 12px rgba(0, 0, 0, 0.15);
+    transform: rotate(-2deg);
+    overflow-wrap: break-word;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+.note:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow:
+        7px 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
