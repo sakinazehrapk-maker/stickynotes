@@ -10,7 +10,18 @@ addNoteButton.addEventListener("click", function () {
     }
     const note = document.createElement("div");
     note.classList.add("note");
-    note.textContent = text;
+    const pin = document.createElement("div");
+    pin.classList.add("pin");
+    pin.textContent = "📌";
+    const message = document.createElement("div");
+    message.classList.add("message");
+    message.textContent = text;
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-note");
+    deleteButton.textContent = "×";
+    note.appendChild(pin);
+    note.appendChild(message);
+    note.appendChild(deleteButton);
     note.style.backgroundColor = noteColor.value;
     const maxX = wall.clientWidth - 210;
     const maxY = wall.clientHeight - 210;
@@ -21,5 +32,8 @@ addNoteButton.addEventListener("click", function () {
     const rotation = Math.random() * 8 - 4;
     note.style.transform = `rotate(${rotation}deg)`;
     wall.appendChild(note);
+    deleteButton.addEventListener("click", function () {
+        note.remove();
+    });
     noteText.value = "";
 });
