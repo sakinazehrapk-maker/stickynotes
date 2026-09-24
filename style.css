@@ -128,12 +128,17 @@ button:active {
     transition:
         transform 0.2s,
         box-shadow 0.2s;
+    cursor: grab;
+    user-select: none;
 }
 .note:hover {
     transform: rotate(0deg) scale(1.05);
     box-shadow:
         7px 10px 20px rgba(0, 0, 0, 0.2);
     z-index: 10;
+}
+.note:active {
+    cursor: grabbing;
 }
 .pin {
     position: absolute;

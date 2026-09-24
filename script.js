@@ -37,3 +37,36 @@ addNoteButton.addEventListener("click", function () {
     });
     noteText.value = "";
 });
+let activeNote = null;
+let offsetX = 0;
+let offsetY = 0;
+wall.addEventListener("mousedown", function (event) {
+    const note = event.target.closest(".note");
+    if (!note) return;
+    if (event.target.classList.contains("delete-note")) {
+        return;
+    }
+    activeNote = note;
+    const noteRect = note.getBoundingClientRect();
+    const wallRect = wall.getBoundingClientRect();
+    offsetX = event.clientX - noteRect.left;
+    offsetY = event.clientY - noteRect.top;
+    note.style.zIndex = 100;
+});
+document.addEventListener("mousemove", function (event) {
+    if (!activeNote) return;
+    const wallRect = wall.getBoundingClientRect();
+    let newX = event.clientX - wallRect.left - offsetX;
+    let newY = event.clientY - wallRect.top - offsetY;
+    const maxX = wall.clientWidth - activeNote.offsetWidth;
+    const maxY = wall.clientHeight - activeNote.offsetHeight;
+    newX = Math.max(0, Math.min(newX, maxX));
+    newY = Math.max(0, Math.min(newY, maxY));
+    activeNote.style.left = `${newX}px`;
+    activeNote.style.top = `${newY}px`;
+});
+document.addEventListener("mouseup", function () {
+    if (!activeNote) return;
+    activeNote.style.zIndex = 1;
+    activeNote = null;
+});
