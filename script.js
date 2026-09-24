@@ -1,8 +1,69 @@
+const quotes = [
+    "Dont wait to be whole. Go limping. Go with questions. Go while the pieces are still coming together. Just go.",
+    "what is meant for you will find you, it knows you by name",
+    "To unpathed waters and undreamed shores -William Shakespeare",
+    "you cant skip the messy part, the mes part is hwere you grow",
+    "and if it doesnt happen the way you wanted, itll happen in a way better than you imagined",
+    "thers a future version of you telling the most incredible story of how all this came together",
+    "you just have to get really good at continuing",
+    "what is done with love is done well",
+    "long live the reckless and the brave",
+    "when my skills dont match my ambition, it is my job to raise my capabilities not to lower my desire",
+    "and theres always another train",
+    "you worry too much who figures it out every single time"
+];
 const wall = document.getElementById("wall");
 const noteText = document.getElementById("noteText");
 const noteColor = document.getElementById("noteColor");
 const addNoteButton = document.getElementById("addNote");
 let savedNotes = JSON.parse(localStorage.getItem("motivationalNotes")) || [];
+const motivationButton =
+    document.getElementById("motivationButton");
+const stickQuote =
+    document.getElementById("stickQuote");
+const quote =
+    document.getElementById("quote");
+let currentQuote = "";
+motivationButton.addEventListener("click", function () {
+    const randomIndex =
+        Math.floor(Math.random() * quotes.length);
+    currentQuote = quotes[randomIndex];
+    quote.textContent = currentQuote;
+    stickQuote.classList.remove("hidden");
+});
+stickQuote.addEventListener("click", function () {
+    if (currentQuote === "") return;
+    const maxX = wall.clientWidth - 210;
+    const maxY = wall.clientHeight - 210;
+    const randomX =
+        Math.random() * maxX;
+    const randomY =
+        Math.random() * maxY;
+    const rotation =
+        Math.random() * 8 - 4;
+    const colors = [
+        "#fff3a6",
+        "#ffd6e7",
+        "#cdefff",
+        "#d9f7be",
+        "#e5d4ff"
+    ];
+    const randomColor =
+        colors[
+            Math.floor(
+                Math.random() * colors.length
+            )
+        ];
+    createNote(
+        currentQuote,
+        randomColor,
+        `${randomX}px`,
+        `${randomY}px`,
+        rotation
+    );
+    saveNotes();
+    stickQuote.classList.add("hidden");
+});
 function saveNotes() {
     const notes = [];
     document.querySelectorAll(".note").forEach(function (note) {

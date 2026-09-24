@@ -175,3 +175,35 @@ button:active {
     background: rgba(255, 255, 255, 0.5);
     transform: none;
 }
+.motivation-box {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    text-align: center;
+    background: #fff4f8;
+    border: 2px dashed #e5a5b9;
+    border-radius: 20px;
+    box-shadow:
+        0 8px 20px rgba(92, 70, 82, 0.1);
+}
+.motivation-box h2 {
+    color: #b85c7a;
+    margin-bottom: 15px;
+}
+.motivation-box p {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #6d5360;
+}
+.motivation-box button {
+    margin: 5px;
+}
+.hidden {
+    display: none;
+}
