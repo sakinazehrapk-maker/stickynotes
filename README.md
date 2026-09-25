@@ -16,6 +16,7 @@ The project was created as a small, creative web development project focused on 
 
 ![website](image.png) 
 ![features](image-1.png)
+<img width="911" height="571" alt="image" src="https://github.com/user-attachments/assets/111fee06-90ff-4544-9a58-673fb3e0b8f9" />
 
 
 ## Getting Started
@@ -67,11 +68,21 @@ No additional packages or installations are required.
 * Open `index.html`.
 * Either open the file directly in a web browser or use the Live Server extension.
 * Write a motivational message in the text box.
+* <img width="742" height="310" alt="image" src="https://github.com/user-attachments/assets/9e7a4466-aa64-45cc-929c-ab266d81486f" />
+
 * Choose a Post-it color.
+* <img width="839" height="569" alt="image" src="https://github.com/user-attachments/assets/e099e557-2c22-42c8-9158-1f62f0e4daea" />
+
 * Click **"Stick it!"** to add the note to the wall.
+* <img width="1335" height="576" alt="image" src="https://github.com/user-attachments/assets/19569ef8-d665-4ba1-95e3-44cf3f5da540" />
+
 * Click and drag notes to move them around.
+* <img width="1346" height="573" alt="image" src="https://github.com/user-attachments/assets/e49da1ad-f87f-473c-8551-3d840a90453e" />
+
 * Hover over a note and click **×** to delete it.
 * Use **"Give me a little motivation"** to generate a random motivational quote.
+* <img width="1197" height="316" alt="image" src="https://github.com/user-attachments/assets/8e980812-54c6-4228-ade2-268159fb6929" />
+
 * Click **"Stick this on my wall"** to add the generated quote as a Post-it.
 
 If using Live Server:
